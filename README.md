@@ -38,11 +38,17 @@ set a variable called companies = to all the Companies.
 
 2. set a variable called locations = to all the Locations ordered by street_name.
 
+	locations = Location.order(:street_name)
+
 
 3. set a variable called reviews = to all the Reviews ordered by rating.
 
+reviews = Review.order(:rating)
+
 
 4. set a variable called company = to the Company with an ID of 10.
+
+company = Company.find(10)
 
 
 5. select all of the products that belong to that company.
