@@ -53,37 +53,58 @@ company = Company.find(10)
 
 5. select all of the products that belong to that company.
 
+company.products
+
 
 6. select all of the locations that belong to that company.
+
+company.locations
 
 
 7. select the first product that belongs to that company.
 
+company.products.first 
+
 
 8. select all the reviews that belong to that product.
+
+Product.find(10).reviews
 
 
 9. select all the reviews that belong to the product with id of 1.
 
+Product.find(1).reviews
+
 
 10. update each product's rating to 0.
 
+x = Product.find(1).reviews
+ x.map{|y| y.update(rating: 0)}
+
 
 11. select all the reviews with a rating of greater than 5.  
+    
     Review.where("rating  > 5")
 
 12. select all the companies with a start date before 12/12/2012.  
+    
     Company.where(['start_date < ?', '12/12/2012'])
 
 13. How many are there?
 
+Company.where(['start_date < ?', '12/12/2012']).count
+
+		17 
+
 
 14. select all the products with a price greater than 50. Product.where("? > ?")
+
+Product.where("price > 50" )
 
 
 15. select review with id of 10 and return the product it belongs to.
 
-
+Review.find(10).product
 
 ## View Stories
 
